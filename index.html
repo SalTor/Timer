@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<title>0:00</title>
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="stylesheets/index.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row" id="timer">
+				<div id="time">0:00</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3" id="buttonContainer">
+					<form role="form">
+						<legend>Admin Panel</legend>
+						<div class="text-center form-group form-inline">
+							<button type="button" class="btn btn-default" id="toggleCountUpCountDown">Count Up</button>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default" id="pauseButton">Pause</button>
+								<button type="button" class="btn btn-default" id="resetButton">Reset</button>
+								<button type="button" class="btn btn-default" id="playButton">Start</button>
+							</div>
+							<input type="number" name="customTime" id="customTime" class="form-control" value="" min="" max="" step="" title="customTime" placeholder="Enter desired time">
+							<button type="submit" id="customTimeSubmit" class="btn btn-primary">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="scripts/index.js"></script>
+	</body>
+</html>

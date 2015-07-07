@@ -1,0 +1,22 @@
+#timer{
+	font-family: sans-serif;
+	font-size: 60vh;
+	text-align: center;
+	margin-top: 1%;
+}
+body{
+	color: white;
+	background: green;
+}
+.warning{
+	background: #fee101;
+	color: black;
+}
+.stop{
+	background: red;
+	color: white;
+}
+form>legend{
+	color:white;
+	text-align: center;
+}
