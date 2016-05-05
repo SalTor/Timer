@@ -1,22 +1,30 @@
 $(document).ready(function(){
-    var total, warning, elapsed, remaining;
-    var $toggleCountUpCountDown = $("#toggleCountUpCountDown"),
+    var total,
+        warning,
+        elapsed,
+        remaining,
+        $toggleCountUpCountDown = $("#toggleCountUpCountDown"),
         $customTimeSubmit       = $("#customTimeSubmit"),
         $buttonContainer        = $("#buttonContainer"),
         $customTime             = $("#customTime"),
-        $pause                  = $("#pauseButton"),
-        $reset                  = $("#resetButton"),
-        $play                   = $("#playButton"),
-        $title                  = $("title"),
-        $time                   = $("#time"),
-        $body                   = $("body"),
-        existingTimer           = false,
-        customTimeValue         = 8,
-        customTime              = false,
-        paused                  = true,
-        reset                   = false,
-        minutes                 = Math.floor(elapsed / 60),
-        seconds                 = elapsed % 60;
+
+        $pause = $("#pauseButton"),
+        $reset = $("#resetButton"),
+        $play  = $("#playButton"),
+        $title = $("title"),
+        $time  = $("#time"),
+        $body  = $("body"),
+
+        existingTimer   = false,
+
+        customTimeValue = 8,
+        customTime      = false,
+
+        paused = true,
+        reset  = false,
+
+        minutes = Math.floor(elapsed / 60),
+        seconds = elapsed % 60;
 
     function start(){
         paused    = false;
@@ -38,12 +46,15 @@ $(document).ready(function(){
             minutes   = Math.floor(elapsed / 60);
             seconds   = elapsed % 60;
             paused    = true;
-            $time.text(minutes + ':' + pad(seconds, 2));
+
+            $time.text(minutes +  ':' + pad(seconds, 2));
             $title.text(minutes + ':' + pad(seconds, 2));
+
             reset         = false;
             existingTimer = false;
+
             $body.removeClass('warning');
-        }else{}
+        }
     }
 
     function timer(){
@@ -54,19 +65,19 @@ $(document).ready(function(){
             if($toggleCountUpCountDown.hasClass('btn-warning')){
                 minutes = Math.floor(remaining / 60);
                 seconds = remaining % 60;
-                $time.text(minutes + ':' + pad(seconds, 2));
+                $time.text(minutes  + ':' + pad(seconds, 2));
                 $title.text(minutes + ':' + pad(seconds, 2));
             }else{
                 minutes = Math.floor(elapsed / 60);
                 seconds = elapsed % 60;
-                $time.text(minutes + ':' + pad(seconds, 2));
+                $time.text(minutes  + ':' + pad(seconds, 2));
                 $title.text(minutes + ':' + pad(seconds, 2));
             }
 
             if(elapsed == total){
                 $body.attr('class', 'stop');
                 $time.text('TIME!');
-            }else if(remaining<=warning){
+            }else if(remaining <= warning){
                 $body.attr('class', 'warning');
                 timer();
             }else{
@@ -94,6 +105,7 @@ $(document).ready(function(){
             resetTimer();
         }
     });
+
     $customTimeSubmit.click(function(event){
         event.preventDefault();
         customTime = true;
@@ -108,13 +120,13 @@ $(document).ready(function(){
 
     Mousetrap.bind('space', function(){
         if(existingTimer&&paused){
-            //If there exists a timer that is paused, resume playing.
+            // If there exists a timer that is paused, resume playing.
             paused = false;
             existingTimer = true;
             reset = false;
             timer();
         }else if(!existingTimer&&paused){
-            //If no timer exists, start it.
+            // If no timer exists, start it.
             paused = false;
             existingTimer = true;
             reset = false;
