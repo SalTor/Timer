@@ -1,3 +1,5 @@
+function log(message){console.log(message);}
+
 $(document).ready(function(){
     var total,
         warning,
@@ -28,7 +30,7 @@ $(document).ready(function(){
 
     function start(){
         paused    = false;
-        warning   = customTime ? 60 : 2 * 60;
+        warning   = customTime ? 0 : 2 * 60;
         total     = customTime ? customTimeValue : 8 * 60;
 
         elapsed   = 0;
@@ -136,5 +138,10 @@ $(document).ready(function(){
             existingTimer = true;
             reset = false;
         }
+    });
+
+    Mousetrap.bind('/', function() {
+        log("r for resetting the timer");
+        log("space for pausing the current timer and resuming the current timer");
     });
 });
