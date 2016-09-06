@@ -3,17 +3,20 @@
     <head>
         <title>0:00</title>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <link rel="stylesheet" href="stylesheets/index.css">
+        <link rel="stylesheet" href="./public/build/css/index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <div class="container">
             <div class="row" id="timer">
                 <div id="time">0:00</div>
             </div>
+
             <div class="row">
-                <div class="col-md-6 col-md-offset-3" id="buttonContainer">
+                <div id="admin__control-panel">
                     <form role="form">
                         <legend>Admin Panel</legend>
+
                         <div class="text-center form-group form-inline">
                             <button type="button" class="btn btn-default" id="toggleCountUpCountDown">Count Up</button>
 
@@ -24,8 +27,7 @@
                 </div>
             </div>
         </div>
-        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script src="scripts/mousetrap.min.js"></script>
-        <script src="scripts/index.js"></script>
+
+        <script src="./public/build/js/timer.js"></script>
     </body>
 </html>

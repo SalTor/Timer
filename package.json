@@ -8,17 +8,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com//SalTor/timer.git"
+    "url": "https://github.com/SalTor/timer.git"
   },
   "author": "Sal Torcivia",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "^6.3.6",
     "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-notify": "^0.4.5",
     "grunt-postcss": "^0.8.0",
+    "jquery": "^3.1.0",
     "node-bourbon": "^4.2.8"
   }
 }
